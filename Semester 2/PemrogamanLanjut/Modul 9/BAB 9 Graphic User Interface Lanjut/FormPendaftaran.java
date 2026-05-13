@@ -1,136 +1,111 @@
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.*;
 
 public class FormPendaftaran extends JFrame implements ActionListener {
 
-    JLabel title = new JLabel("FORM DAFTAR ULANG MAHASISWA BARU");
+    JLabel lbnama = new JLabel("Nama Lengkap");
+    JLabel lbtgl = new JLabel("Tanggal Lahir");
+    JLabel lbno = new JLabel("Nomor Pendaftaran");
+    JLabel lbtelp = new JLabel("No. Telp");
+    JLabel lbalamat = new JLabel("Alamat");
+    JLabel lbemail = new JLabel("E-mail");
 
-    JLabel lblNama = new JLabel("Nama Lengkap");
-    JLabel lblTgl = new JLabel("Tanggal Lahir");
-    JLabel lblNo = new JLabel("Nomor Pendaftaran");
-    JLabel lblTelp = new JLabel("No. Telp");
-    JLabel lblAlamat = new JLabel("Alamat");
-    JLabel lblEmail = new JLabel("E-mail");
+    JTextField tfnama = new JTextField();
+    JTextField tftgl = new JTextField();
+    JTextField tfno = new JTextField();
+    JTextField tftelp = new JTextField();
+    JTextArea taalamat = new JTextArea();
+    JTextField tfemail = new JTextField();
 
-    JTextField txtNama = new JTextField();
-    JTextField txtTgl = new JTextField();
-    JTextField txtNo = new JTextField();
-    JTextField txtTelp = new JTextField();
-    JTextArea txtAlamat = new JTextArea();
-    JTextField txtEmail = new JTextField();
+    JButton submit = new JButton("submit");
 
-    JButton btnSubmit = new JButton("Submit");
-    JButton btnReset = new JButton("Reset");
+    FormPendaftaran() {
 
-    JScrollPane scrollAlamat = new JScrollPane(txtAlamat);
-
-    public FormPendaftaran() {
-
-        setTitle("Daftar Ulang Mahasiswa");
-        setSize(500, 500);
+        setTitle("Form Daftar Ulang");
+        setSize(350, 380);
         setLocationRelativeTo(null);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(null);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        getContentPane().setBackground(new Color(230, 240, 255));
+        lbnama.setBounds(20, 20, 120, 20);
+        tfnama.setBounds(150, 20, 150, 20);
 
-        title.setBounds(70, 20, 400, 30);
-        title.setFont(new Font("Arial", Font.BOLD, 18));
+        lbtgl.setBounds(20, 60, 120, 20);
+        tftgl.setBounds(150, 60, 150, 20);
 
-        lblNama.setBounds(50, 80, 150, 25);
-        txtNama.setBounds(220, 80, 200, 25);
+        lbno.setBounds(20, 100, 120, 20);
+        tfno.setBounds(150, 100, 150, 20);
 
-        lblTgl.setBounds(50, 120, 150, 25);
-        txtTgl.setBounds(220, 120, 200, 25);
+        lbtelp.setBounds(20, 140, 120, 20);
+        tftelp.setBounds(150, 140, 150, 20);
 
-        lblNo.setBounds(50, 160, 150, 25);
-        txtNo.setBounds(220, 160, 200, 25);
+        lbalamat.setBounds(20, 180, 120, 20);
+        taalamat.setBounds(150, 180, 150, 50);
 
-        lblTelp.setBounds(50, 200, 150, 25);
-        txtTelp.setBounds(220, 200, 200, 25);
+        lbemail.setBounds(20, 250, 120, 20);
+        tfemail.setBounds(150, 250, 150, 20);
 
-        lblAlamat.setBounds(50, 240, 150, 25);
-        scrollAlamat.setBounds(220, 240, 200, 70);
+        submit.setBounds(220, 300, 80, 25);
 
-        lblEmail.setBounds(50, 330, 150, 25);
-        txtEmail.setBounds(220, 330, 200, 25);
+        add(lbnama);
+        add(tfnama);
 
-        btnSubmit.setBounds(120, 390, 100, 35);
-        btnReset.setBounds(260, 390, 100, 35);
+        add(lbtgl);
+        add(tftgl);
 
-        btnSubmit.addActionListener(this);
+        add(lbno);
+        add(tfno);
 
-        btnReset.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                txtNama.setText("");
-                txtTgl.setText("");
-                txtNo.setText("");
-                txtTelp.setText("");
-                txtAlamat.setText("");
-                txtEmail.setText("");
-            }
-        });
+        add(lbtelp);
+        add(tftelp);
 
-        add(title);
+        add(lbalamat);
+        add(taalamat);
 
-        add(lblNama);
-        add(txtNama);
+        add(lbemail);
+        add(tfemail);
 
-        add(lblTgl);
-        add(txtTgl);
+        add(submit);
 
-        add(lblNo);
-        add(txtNo);
-
-        add(lblTelp);
-        add(txtTelp);
-
-        add(lblAlamat);
-        add(scrollAlamat);
-
-        add(lblEmail);
-        add(txtEmail);
-
-        add(btnSubmit);
-        add(btnReset);
+        submit.addActionListener(this);
 
         setVisible(true);
     }
 
     public void actionPerformed(ActionEvent e) {
 
-        if (txtNama.getText().isEmpty() ||
-                txtTgl.getText().isEmpty() ||
-                txtNo.getText().isEmpty() ||
-                txtTelp.getText().isEmpty() ||
-                txtAlamat.getText().isEmpty() ||
-                txtEmail.getText().isEmpty()) {
+        if (
+            tfnama.getText().equals("") ||
+            tftgl.getText().equals("") ||
+            tfno.getText().equals("") ||
+            tftelp.getText().equals("") ||
+            taalamat.getText().equals("") ||
+            tfemail.getText().equals("")
+        ) {
 
             JOptionPane.showMessageDialog(
-                    this,
-                    "Semua kolom harus diisi!",
-                    "Peringatan",
-                    JOptionPane.WARNING_MESSAGE);
+                null,
+                "Semua kolom harus diisi!"
+            );
 
         } else {
 
-            int konfirmasi = JOptionPane.showConfirmDialog(
-                    this,
-                    "Apakah anda yakin data yang Anda isi sudah benar?",
-                    "Konfirmasi",
-                    JOptionPane.OK_CANCEL_OPTION);
+            int jawab = JOptionPane.showConfirmDialog(
+                null,
+                "Apakah anda yakin data yang Anda isi sudah benar?"
+            );
 
-            if (konfirmasi == JOptionPane.OK_OPTION) {
+            if (jawab == JOptionPane.OK_OPTION) {
 
                 new HasilData(
-                        txtNama.getText(),
-                        txtTgl.getText(),
-                        txtNo.getText(),
-                        txtTelp.getText(),
-                        txtAlamat.getText(),
-                        txtEmail.getText()
+                    tfnama.getText(),
+                    tftgl.getText(),
+                    tfno.getText(),
+                    tftelp.getText(),
+                    taalamat.getText(),
+                    tfemail.getText()
                 );
+
             }
         }
     }
