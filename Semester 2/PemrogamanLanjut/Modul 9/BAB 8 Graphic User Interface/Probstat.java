@@ -1,4 +1,4 @@
-//  Mata Kuliah: Probabilitas dan Statistika (Probstat)
+//  Probstat
 //  Rumus: Tugas 25% + Kuis 15% + UTS 30% + UAS 30%
 public class Probstat extends MataKuliah {
 

@@ -1,7 +1,3 @@
-/**
- * Mata Kuliah: Algoritma dan Struktur Data (ASD)
- * Rumus: Tugas 15% + Kuis 25% + UTS 30% + UAS 30%
- */
 public class ASD extends MataKuliah {
 
     public ASD() {

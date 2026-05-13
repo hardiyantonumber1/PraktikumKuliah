@@ -1,4 +1,4 @@
-// Mata Kuliah: Pemrograman Lanjut (Pemlan)
+// Pemlan
 // Rumus: Tugas 20% + Kuis 20% + UTS 25% + UAS 35%
 public class Pemlan extends MataKuliah {
 

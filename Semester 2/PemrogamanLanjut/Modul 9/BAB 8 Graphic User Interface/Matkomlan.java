@@ -1,4 +1,4 @@
-//  Mata Kuliah: Matematika Komputasi Lanjut (Matkomlan)
+//  Matkomlan
 //  Rumus: Tugas 10% + Kuis 20% + UTS 35% + UAS 35%
 public class Matkomlan extends MataKuliah {
 
